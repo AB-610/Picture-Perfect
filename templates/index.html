@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA Compatible" content="ie=edge">
+    <title>Picture Perfect</title>
+    <link rel="shortcut icon" href="# /">
+    <link rel="stylesheet" href="/static/home.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <!-- For Hamburger button -->
+    <div class="btn">
+        <span class="fas fa-bars"></span>
+    </div>
+    <!-- For Sidenav bar -->
+    <nav class="sidebar">
+        <div class="text">BROWSE BY</div>
+        <ul>
+            <li style="font-family: 'Montserrat', sans-serif;">
+                <a class="serv-btn">People
+                    <span class="fas fa-caret-down first"></span>
+                </a>
+                <ul class="serv-show">
+                    <li>
+                        <form method="POST" action="/person">
+                            <input id="people-search" type="text" name="people" placeholder="Search.." autocomplete="off" value=>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            <li style="font-family: 'Montserrat', sans-serif;">
+                <a class="feat-btn">Genre
+                    <span class="fas fa-caret-down first"></span>
+                </a>
+                <ul class="feat-show">
+                    {% for dict_item in gl %}
+                        {% for key, value in dict_item.items() %}
+                            <li>
+                                <form method="POST" action="/genre/{{key}}">
+                                    <button class="list" type="submit">
+                                        <input type="hidden" name=pass1 value="{{value}}">
+                                        <input type="hidden" name=pass2 value="{{key}}">
+                                        <h1 style="font-family: 'Montserrat', sans-serif;">{{key}}</h1>
+                                    </button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </li>
+            <li style="font-family: 'Montserrat', sans-serif;"><a href="/top-rated">Top Rated</a></li>
+        </ul>
+    </nav>
+
+    <div class="fullscreen">
+        <div class="fullscreen filter"></div>
+        
+        <!-- For Title -->
+        <div class="mid">
+            <p style="font-family: 'Montserrat', sans-serif;">PICTURE PERFECT</p>
+        </div>
+
+        <!-- For Trending Movies Section -->
+        <div class="bottom">
+            <div class="divider"></div>
+            <h1 style="font-family: 'Montserrat', sans-serif;color: white;position: absolute;top: 0%;left: 44.7%;font-size: 2.26vw;">Trending</h1>
+            <div class="divider" style="left: 53.2vw;"></div>
+            <section>
+                <div class="movie-list-container">
+                    {% for movie in data %}
+                    <div class="switch">
+                        <div class="movie-card">
+                            <form method="POST" action="/movie/{{movie.title}}">
+                                <button type="submit">
+                                    <input type="hidden" name=pass value="{{movie.id}}">
+                                    <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="Unavailable" class="movie-poster" onerror="this.src='/static/img/image-not-found.jpg'">
+                                    <h2>{{movie.title}}</h2>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="overview-card">
+                            <form method="POST" action="/movie/{{movie.title}}">
+                                <button type="submit">
+                                    <input type="hidden" name=pass value="{{movie.id}}">
+                                    <h2 style="font-family: 'Montserrat', sans-serif;">{{movie.title}}</h2>
+                                    <p style="font-family: 'Montserrat', sans-serif;color: white;font-weight: 900; font-size: 20.8px;">{{movie.overview}}</p>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+        </div>
+
+    </div>
+
+    <!-- For Searchbar -->
+    <div class="right">
+        <div class="span3 widget-span widget-type-raw_html custom-search" data-widget-type="raw_html" data-x="4" data-w="3">
+            <div class="cell-wrapper layout-widget-wrapper">
+                <span id="hs_cos_wrapper_module_14308928327274411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+                    <form method="POST" action="/search">
+                        <input placeholder="Search" class="form-control tt-input" id="express-form-typeahead" type="text" name="search" autocomplete="off">
+                        <button class="search-btn" type="submit"><span class="icon"></span></button>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- Minimal Script to make the sidenav functional -->
+    <script>
+        $(document).ready(function () {
+            $(window).load(function () {
+                $('#preloader').delay(1540).fadeOut();
+            });
+        });
+        $('.btn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+        $('.feat-btn').click(function () {
+            $('nav ul .feat-show').toggleClass("show");
+            $('nav ul .first').toggleClass("rotate");
+        });
+        $('.serv-btn').click(function () {
+            $('nav ul .serv-show').toggleClass("show1");
+            $('nav ul .second').toggleClass("rotate");
+        });
+        $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+
+</body>
+
+</html>

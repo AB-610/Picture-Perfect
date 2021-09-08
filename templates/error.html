@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA Compatible" content="ie=edge">
+
+    <title>Error</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        background-color: #1d1d1d;
+        overflow-x: hidden;
+    }
+
+    .home {
+        z-index: 9999;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        background-image: url(/static/img/h2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: transparent;
+        border: none;
+    }
+
+    h1 {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+        top: 10px;
+        left: 28px;
+        font-size: 46px;
+    }
+
+    h2 {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        top: 82px;
+        left: 19px;
+        font-size: 37px;
+    }
+
+    li {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        top: 55px;
+        left: 28px;
+        font-size: 28px;
+    }
+</style>
+
+<body>
+
+    <h1>Something went wrong.</h1>
+    <h2>You can try:</h2>
+    <ul>
+        <li>Checking your internet connection.</li>
+        <li>Return to the home page and try again.</li>
+        <li>Checking the spelling of the search input.</li>
+    </ul>
+    <h1 style="position: relative;top: 37px;">We regret the inconvenience.</h1>
+    
+    <!-- Home Button -->
+    <form method="POST" action="/">
+        <button class="home" type="submit"></button>
+    </form>
+</body>

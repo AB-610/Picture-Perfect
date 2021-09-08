@@ -1,0 +1,403 @@
+body {
+    background-color: #1d1d1d;
+    overflow-x: hidden;
+}
+
+
+/* Home Button */
+.home {
+    z-index: 9999;
+    width: 28px;
+    height: 28px;
+    position: fixed;
+    top: 19px;
+    left: 19px;
+    background-image: url(/static/img/h2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+}
+
+/* Search Bar */
+.right {
+    position: fixed;
+    display: inline-block;
+    right: 19px;
+    top: 19px;
+    z-index: 9999;
+}
+
+.custom-search {
+    position: absolute;
+    right: 20px;
+    top: 19 px;
+}
+
+#express-form-typeahead {
+    background-color: transparent;
+    background-image: url("/static/img/s4.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    -webkit-transition: width 400ms ease, background 400ms ease;
+    transition: width 400ms ease, background 400ms ease;
+    width: 0;
+}
+
+#express-form-typeahead:focus {
+    background-color: white;
+    border: 2px solid #b34a00;
+    cursor: text;
+    outline: 0;
+    width: 230px;
+}
+
+.search-btn {
+    display: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+/* Information about the person */
+
+h1 {
+    color:white;
+    position: absolute;
+    left: 73px;
+    top: 19px;
+    z-index: 5;
+    font-size: 46px;
+    font-family: 'Times New Roman', sans-serif;
+
+}
+
+.content {
+    position: absolute;
+    top: 95px;
+    left: 424px;
+    z-index: 9899;
+    height: 406px;
+    width: 856px;
+}
+.info{
+    color: white;
+    letter-spacing:1.5px;
+    font-size: 20px;
+    
+}
+
+/* Gallery Button */
+
+.gallery_button{
+    position: absolute;
+    z-index: 9999;
+    background-color: #f16a09;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding: 10px 15px;
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Show more button */
+
+.show-read-more .more-text{
+    display: none;
+}
+a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+.comment {
+	width: 856px;
+	background-color: transparent;
+	margin: 10px;
+}
+.bio{
+    width:856px;
+    height:334px;
+    display:block;
+    border:1px solid red;
+    padding:10px;
+    overflow:hidden;
+}
+.poster {
+    z-index: 5;
+    width: 325px;
+    height: auto;
+    position: absolute;
+    top: 109px;
+    left: 73px;
+}
+
+/* Movies the person is involved in */
+
+.movie-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 109px;
+  left: 15px
+}
+
+.movie-card {
+  width: 22.5vw;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  background-color: #1d1d1d;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.star {
+  top: 386px;
+  left: 116px;
+  width: 46px;
+  height: 46px;
+  position: relative;
+}
+
+.star-text {
+  position: relative;
+  top: 384px;
+  left: 116px;
+  font-size: 15px;
+  margin: -31px;
+  border: none;
+}
+
+.rating-cont {
+  position: relative;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.switch{
+  background-color: #b34a00;
+  height: 523px;
+}
+.switch:hover {
+  
+  box-shadow: 0px 0px 109px white;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.1);
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
+  background-color: #b34a00;
+}
+
+.overview-card{
+  background-color: #b34a00;
+  display: none;
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 9999;
+}
+.switch:hover .movie-card {
+  display:none;
+}
+
+.switch:hover .overview-card {
+  display:block;
+  
+}.rec{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    top: 604px;
+    left: 0px;
+    z-index: 9899;
+    height: auto;
+    width: 100vw;
+    
+}
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.row > .column {
+    padding: 0 8px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Create four equal columns that floats next to eachother */
+  
+  
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    padding-top: 37px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    overflow-x:hidden ;
+    background-color: #1d1d1d;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color:transparent;
+    margin: auto;
+    padding: 0;
+    width: 21.7vw;
+    max-width: 1200px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Hide the slides by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Caption text */
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  img.demo {
+    opacity: 0.46;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+  
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url(/static/img/loading.gif) center;
+}
+  

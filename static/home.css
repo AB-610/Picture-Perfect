@@ -1,0 +1,480 @@
+/* Set background image */
+
+html, body {
+  height: auto;
+  margin: 0;
+  padding: 0%;
+  width: 100%;
+  background-color: #1d1d1d;
+}
+
+h2 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fullscreen {
+  left: 0;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.filter {
+  background-image: url(img/bg9.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 90%;
+  z-index: 1;
+  position: absolute;
+}
+
+/* Place menu on the left  */
+
+.left {
+  position: absolute;
+  display: inline-block;
+  left: -28px;
+  top: -19px;
+  z-index: 9999;
+}
+
+/* Place title */
+
+.mid {
+  position: relative;
+  border: none;
+  font-size: 5.25vw;
+  color: white;
+  text-align: center;
+  height: auto;
+  z-index: 999;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Place Search Bar on the right */
+
+.right {
+  position: absolute;
+  display: inline-block;
+  right: 3%;
+  top: 4%;
+  z-index: 9999;
+}
+
+/* Search bar  */
+
+.custom-search {
+  position: relative;
+  display: inline-block;
+  right: 20px;
+  top: 19 px;
+}
+
+#express-form-typeahead {
+  background-color: transparent;
+  background-image: url("img/s4.png");
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  border: none;
+  cursor: pointer;
+  height: 37px;
+  margin: 3px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  -webkit-transition: width 400ms ease, background 400ms ease;
+  transition: width 400ms ease, background 400ms ease;
+  width: 0;
+}
+
+#express-form-typeahead:focus {
+  background-color: white;
+  border: 2.8px solid #b34a00;
+  cursor: text;
+  outline: 0;
+  width: 230px;
+}
+
+.search-btn {
+  display: none;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+/* Searchbar for people */
+::placeholder {
+  color: #b34a00;
+  opacity: 1; /* Firefox */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+#people-search {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #b34a00;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #1d1d1d;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+#people-search:focus {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #b34a00;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+/*Bottom*/
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 90%;
+  left: 0px;
+  background-color: transparent;
+  height: 500px;
+  width: 100%;
+}
+
+/* Trending movies */
+.movie-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 82px;
+  left: 15px
+}
+
+.movie-card {
+  width: 22.5vw;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.switch{
+  background-color: #b34a00;
+  height: 523px;
+}
+.switch:hover {
+  box-shadow: 0px 0px 109px white;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.1);
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
+  background-color: #b34a00;
+}
+
+.overview-card{
+  background-color: #b34a00;
+  display: none;
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 9999;
+}
+.switch:hover .movie-card {
+  display:none;
+}
+
+.switch:hover .overview-card {
+  display:block;
+  
+}
+.movie-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 109px;
+  left: 19px
+}
+
+.movie-card {
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  background-color: #1d1d1d;
+}
+
+img {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.divider {
+  display: inline-block;
+  border-bottom: white 0.28vh solid;
+  width: 43vw;
+  margin-top: 3%;
+  margin-left: 1%;
+  position: absolute;
+}
+
+/*Hamburger Menu*/
+
+.btn {
+  position: absolute;
+  top: 3.7%;
+  left: 2%;
+  height: 45px;
+  width: 45px;
+  z-index: 9999;
+  text-align: center;
+  background: #b34a00;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+
+.btn.click {
+  left: 260px;
+}
+
+.btn span {
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+.btn.click span:before {
+  content: '\f00d';
+}
+
+.sidebar {
+  position: absolute;
+  width: 253px;
+  height: auto;
+  left: -333px;
+  background: #1b1b1b;
+  z-index: 10000;
+  transition: left 0.4s ease;
+}
+
+.sidebar.show {
+  left: 0px;
+}
+
+.sidebar .text {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 96%;
+  list-style: none;
+  position: relative;
+  left: -36px;
+  top: -28px
+}
+
+nav ul li {
+  line-height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ul li.active a {
+  color: #b34a00;
+  background: #1e1e1e;
+  border-left-color: #b34a00;
+}
+
+nav ul li a:hover {
+  background: #1e1e1e;
+}
+
+nav ul li h1 {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ul li.active h1 {
+  color: #b34a00;
+  background: #1e1e1e;
+  border-left-color: #b34a00;
+}
+
+nav ul li h1:hover {
+  background: #1e1e1e;
+}
+
+nav ul ul {
+  position: static;
+  display: none;
+}
+
+nav ul .feat-show.show {
+  display: block;
+  position: relative;
+  left: -25px;
+  top: 0px;
+}
+
+nav ul .serv-show.show1 {
+  display: block;
+  position: relative;
+  top: 0px;
+  left: -37px;
+}
+
+nav ul ul li {
+  line-height: 42px;
+  border-top: none;
+  line-height: 60px;
+  text-align: center;
+  border-top: 0.5px solid rgba(255, 255, 255, .05);
+}
+
+nav ul ul li button {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+  text-align: center;
+  position: relative;
+  left: -9px;
+  font-size: 19px
+}
+
+nav ul li.active ul li button {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+  padding-left: 73px;
+  padding-right: 64px;
+}
+
+nav ul ul li button:hover {
+  color: #b34a00!important;
+  background: #1e1e1e!important;
+}
+
+nav ul li button span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+
+nav ul li button span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+nav ul ul li h1 {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+  text-align: center;
+  position: relative;
+  left: -9px;
+  font-size: 19px
+}
+
+nav ul li.active ul li h1 {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+
+nav ul ul li h1:hover {
+  color: #b34a00!important;
+  background: #1e1e1e!important;
+}
+
+nav ul li h1 span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+
+nav ul li h1 span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.list {
+  font-size: 12px;
+}
+
+#preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #333 url(/static/img/loading.gif) center;
+}

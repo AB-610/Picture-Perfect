@@ -1,0 +1,334 @@
+html, body {
+    height: 200%;
+    margin: 0;
+    padding: 0%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.fullscreen {
+    left: 0;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: inherit;
+}
+
+.filter2 {
+    position: fixed;
+    z-index: 2;
+    background-color: #1e1e1e;
+    filter: opacity(0.82);
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    left: 73px;
+    top: 19px;
+    z-index: 5;
+    font-size: 46px;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+h3 {
+    color: white;
+    position: relative;
+    font-weight: 1px;
+    letter-spacing: 0.5px;
+    z-index: 5;
+    font-size: 28px;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+/* For movie poster */
+
+.poster {
+    z-index: 5;
+    width: 325px;
+    height: auto;
+    position: absolute;
+    top: 109px;
+    left: 73px;
+}
+
+/* Home Button */
+
+.home {
+    z-index: 9999;
+    width: 28px;
+    height: 28px;
+    position: fixed;
+    top: 19px;
+    left: 19px;
+    background-image: url(/static/img/h2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+}
+
+/* For Cast */
+
+.cast-list-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 658px;
+    left: 46px;
+    z-index: 9899;
+    height: auto;
+    width: 1216px
+}
+
+.cast-card {
+    width: 110px;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* For information about the movie */
+
+.content {
+    position: absolute;
+    top: 95px;
+    left: 424px;
+    z-index: 9899;
+    height: 406px;
+    width: 856px;
+}
+
+p {
+    font-size: 16.3px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+
+/* For movie recommendations */
+
+.rec {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    top: 1045px;
+    left: 46px;
+    z-index: 9899;
+    height: auto;
+    width: 150px;
+}
+
+.movie-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 9999;
+    top: 1072px;
+    left: 15px
+}
+
+.movie-card {
+    width: 22.5vw;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.star {
+    top: 386px;
+    left: 116px;
+    width: 46px;
+    height: 46px;
+    position: relative;
+}
+
+.star-text {
+    position: relative;
+    top: 384px;
+    left: 116px;
+    font-size: 15px;
+    margin: -31px;
+    border: none;
+}
+
+.rating-cont {
+    position: relative;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.switch{
+    background-color: transparent;
+}
+.switch:hover {
+    box-shadow: 0px 0px 109px white;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+    background-color: #b34a00;
+}
+
+.overview-card{
+    background-color: #b34a00;
+    display: none;
+    width: 300px;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 9999;
+}
+.switch:hover .movie-card {
+    display:none;
+}
+  
+.switch:hover .overview-card {
+    display:block;
+    
+}
+
+.cast-card:hover {
+    box-shadow: 0px 0px 109px white;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+    background-color: #b34a00;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    text-align: initial;
+}
+
+form {
+    margin: 0px;
+}
+
+/* Trailer Button */
+
+.trailer_button {
+    position: absolute;
+    z-index: 9999;
+    background-color: #f16a09;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding: 10px 15px;
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Searchbar*/
+
+.right {
+    position: absolute;
+    display: inline-block;
+    right: 3%;
+    top: 4%;
+    z-index: 9999;
+}
+.custom-search {
+    position: absolute;
+    right: 20px;
+    top: 19 px;
+}
+
+#express-form-typeahead {
+    background-color: transparent;
+    background-image: url("/static/img/s4.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    -webkit-transition: width 400ms ease, background 400ms ease;
+    transition: width 400ms ease, background 400ms ease;
+    width: 0;
+}
+
+#express-form-typeahead:focus {
+    background-color: white;
+    border: 2px solid #b34a00;
+    cursor: text;
+    outline: 0;
+    width: 230px;
+}
+
+.search-btn {
+    display: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+#preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url(/static/img/loading.gif) center;
+}

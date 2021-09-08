@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="# /">
+    <link rel="stylesheet" href="/static/movie.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <title>{{data.det.title}}</title>
+</head>
+
+<style>
+    .filter {
+        background-image: url(https://image.tmdb.org/t/p/original/{{data.det.backdrop}});
+        background-position: center;
+        background-size: cover;
+        z-index: 1;
+        position: fixed;
+    }
+</style>
+
+<body>
+    <div id="preloader"></div>
+
+    <div class="fullscreen">
+        <div class="fullscreen filter"></div>
+        <div class="filter2"></div>
+        
+        <!-- For home button -->
+        <form method="POST" action="/">
+            <button class="home" type="submit"></button>
+        </form>
+
+        <h1>{{data.det.title}} ({{data.det.year}})</h1>
+
+        <!-- To Display Movie Poster -->
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/original/{{data.det.poster}}">
+        </div>
+        
+        <!-- Information about the movie -->
+        <div class="content">
+            <p class="info">
+                Overview:{{data.det.overview}}
+            </p>
+            <div style="overflow: hidden;margin-top: -15px;margin-bottom: -15px;">
+                <p class="info" style="float: left; width: auto;">
+                    Director:
+                </p>
+                {% for dict_item in data.director %}
+                    <form method="POST" action="/person/{{dict_item.name}}" style="float: left;">
+                        <button type="submit">
+                            <input type="hidden" name=pass value="{{dict_item.id}}">
+                            <p class="info" style="float: right;width: auto;">
+                                {{dict_item.name}}
+                                <img src="/static/img/link.png" style="float: right;margin-left: 7px;position: relative;bottom: 0px;height: 23px;width: 23px;">
+                            </p>
+                            
+                        </button>
+                    </form>
+                {% endfor %}
+            </div>
+            <p class="info">
+                Genres:
+                {% for dict_item in data.det.genres %}
+                    {{dict_item}}
+                    {% if not loop.last %},{% endif %}
+                {% endfor %}
+            </p>
+            <p class="info">
+                Certification:
+                {% for dict_item in data.det.certification %}
+                    {{dict_item}}
+                    {% if not loop.last %},{% endif %}
+                {% endfor %}
+            </p>
+            <p class="info">
+                Runtime:{{data.det.runtime}} minutes
+            </p>
+            <p class="info">
+                Box Office Collection:{{data.det.revenue}}
+            </p>
+            <p class="info">
+                Rating:{{data.det.rating}}
+            </p>
+            <p class="info">
+                {% for dict_item in data.det.trailer %}
+                    <a class="trailer_button" href="{{dict_item}}" target="_blank">Trailer</a>
+                {% endfor %}
+            </p>
+        </div>
+        
+        <h2 style="position: absolute;top: 586px; left: 73px;z-index: 9997;color: white;font-size: 32px;font-family: 'Times New Roman', sans-serif;">Top Billed Cast</h2>
+       
+        <!-- For movie cast -->
+        <div class="cast-list-container">
+            {% for dict_item in data.credits %}
+                <div class="cast-card">
+                    <form method="POST" action="/person/{{dict_item.name}}">
+                        <button type="submit">
+                            <input type="hidden" name=pass value="{{dict_item.id}}">
+                            <img src="https://image.tmdb.org/t/p/w500/{{dict_item.picture}}" alt="Unavailable"
+                                onerror="this.src='/static/img/image-not-found.jpg'">
+                            <h2 style="font-family: 'Montserrat', sans-serif;font-size: 19px;">{{dict_item.name}}</h2>
+                            <h2 style="font-family: 'Montserrat', sans-serif;font-size: 15px;">( as {{dict_item.char_name}} )</h2>
+                        </button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <h2 style="position: absolute; top: 991px; left: 64px;z-index: 9997;color: white;font-size: 31px;">You may also like...</h2>
+       
+
+        <!-- Information about recommended movie -->
+        <div class="movie-list-container">
+            {% for movie in data.rec %}
+                <div class="switch">
+                    <div class="movie-card">
+                        <form method="POST" action="/movie/{{movie.title}}">
+                            <button type="submit">
+                                <input type="hidden" name=pass value="{{movie.id}}">
+                                <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="Unavailable" class="movie-poster" onerror="this.src='/static/img/image-not-found.jpg'">
+                                <h2 style="font-family: 'Montserrat', sans-serif;">{{movie.title}} ({{movie.year}})</h2>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="overview-card">
+                        <form method="POST" action="/movie/{{movie.title}}">
+                            <button type="submit">
+                                <input type="hidden" name=pass value="{{movie.id}}">
+                                <h2 style="font-family: 'Montserrat', sans-serif;">{{movie.title}} ({{movie.year}})</h2>
+                                <p style="font-family: 'Montserrat', sans-serif;color: white;font-weight: 900; font-size: 19px;">{{movie.overview}}</p>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %} 
+        </div>       
+    </div>
+    
+    <!-- Searchbar -->
+    <div class="right">
+        <div class="span3 widget-span widget-type-raw_html custom-search" data-widget-type="raw_html" data-x="4" data-w="3">
+            <div class="cell-wrapper layout-widget-wrapper">
+                <span id="hs_cos_wrapper_module_14308928327274411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+                    <form method="POST" action="/search">
+                        <input placeholder="Search" class="form-control tt-input" id="express-form-typeahead" type="text" name="search" autocomplete="off">
+                        <button class="search-btn" type="submit"><span class="icon"></span></button>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).load(function () {
+                $('#preloader').delay(910).fadeOut();
+            });
+        });
+    </script>
+</body>
+
+</html>
